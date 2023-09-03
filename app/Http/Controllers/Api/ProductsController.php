@@ -28,9 +28,9 @@ class ProductsController extends ApiController
             return $this->errorResponse('Error validation.', $validator->errors());       
         }
 
-        return $this->successResponse('Post successfully created.', new ProductResource(
+        return $this->successResponse('Product successfully created.', new ProductResource(
         	Product::create($validator->validated())
-        ));
+        ), 201);
     }
 
    
